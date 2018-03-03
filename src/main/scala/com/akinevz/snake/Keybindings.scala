@@ -9,9 +9,9 @@ object Keybindings {
 
   import java.awt.event.KeyEvent._
 
-  def changeDirection(direction: Direction): GameEvent = {
-    case e@PlayingState(Snake(travelling,_),_,_) if travelling opposes direction=>e
-    case g: PlayingState => g copy (g.player copy direction)
+  def changeDirection(newDirection: Direction): GameEvent = {
+    case e@PlayingState(Snake(travelling,_),_,_) if travelling opposes newDirection=>e
+    case g: PlayingState => g copy (g.player copy newDirection)
     case e => e
   }
 

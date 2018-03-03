@@ -8,6 +8,8 @@ case class Snake private(travelling: Direction, elements: List[SnakeElement]) {
 
   object Head{
     def unapply(arg: Snake): Option[(Position)] = Some(arg.head.pos)
+
+
   }
   def head: SnakeElement = elements.head
 

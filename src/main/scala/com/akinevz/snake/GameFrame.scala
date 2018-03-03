@@ -94,10 +94,10 @@ class GameFrame(var game: GameState = GameState.start) extends JComponent with W
         //        g2.scale(scale, scale)
         g2.setColor(blockColour) and g2.fillRect(0, 0, size.x * scale, size.y * scale)
         g2.setColor(snakeColour)
-        snake.elements foreach { case SnakeElement(pos) => g2.drawRect(pos.x * scale, pos.y * scale, scale, scale) }
+        snake.elements foreach { case SnakeElement(pos) => g2.fillRect(pos.x * scale, pos.y * scale, scale, scale) }
         s.fruit.collect {
           case (FruitElement((x, y))) =>
-            g2 setColor fruitColour and (g2 drawRect(x * scale, y * scale, scale, scale))
+            g2 setColor fruitColour and (g2 drawOval (x * scale, y * scale, scale, scale))
         }
       case Win | Lost => g2.drawString("Game end!",
         this.getSize().getWidth.toInt / 2,

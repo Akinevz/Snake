@@ -4,6 +4,7 @@ import scala.util.Random
 
 package object snake {
 
+  
   implicit class ButOps[R](val r: R) extends AnyVal {
     @inline def but[Ignored <: Unit](op: Ignored): R = r
 
